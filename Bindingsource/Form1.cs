@@ -108,7 +108,6 @@ namespace Bindingsource
             comboBox1.Enabled = false;
             comboBox2.Enabled = false;
             button1.Enabled = false;
-
             comboBox4.Items.Add("Мужской");
             comboBox4.Items.Add("Женский");
             label2.Text = dataGridView1.ColumnCount.ToString();

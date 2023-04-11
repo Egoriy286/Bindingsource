@@ -112,10 +112,6 @@ namespace Bindingsource
             comboBox4.Items.Add("Мужской");
             comboBox4.Items.Add("Женский");
             label2.Text = dataGridView1.ColumnCount.ToString();
-            //DataGridViewComboBoxColumn cboBoxColumn = new DataGridViewComboBoxColumn();
-            //cboBoxColumn.DataSource = Факультет.GetChoices();
-            //cboBoxColumn.DisplayMember = "Name";  // the Name property in Choice class
-            //cboBoxColumn.ValueMember = "Value";  // ditto for the Value property
             факультетBindingSource.DataSource = Факультет.GetChoices();
         }
 

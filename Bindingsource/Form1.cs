@@ -99,7 +99,6 @@ namespace Bindingsource
                     j++;
                 }
                 k++;
-
             }
             f1.Close();
             all.Add(new Students { studentname = "ALL" });
@@ -304,13 +303,13 @@ namespace Bindingsource
             if (put1)
             {
                 dataGridView1.Columns.Add(dgvAge);
-                button9.Text = "Отоюразить колическтво лет";
+                button9.Text = "Скрыть колическтво лет";
                 put1 = false;
             }
             else
             {
                 dataGridView1.Columns.RemoveAt(dataGridView1.Columns.Count-1);
-                button9.Text = "Скрыть колическтво лет";
+                button9.Text = "Отоюразить колическтво лет";
                 put1 = true;
             }
 

@@ -24,11 +24,11 @@ namespace Bindingsource
 
         private string Gender(string temp)
         {
-            string Sex = "Мужской";
+            string Sex = "Man";
             if (temp.Length > 1)
                 if (temp[temp.Length - 1] == 'а')
                 {
-                    Sex = "Женский";
+                    Sex = "Woman";
                 }
             return Sex;
         }
@@ -62,7 +62,7 @@ namespace Bindingsource
 
             studentsBindingSource.DataSource = IsStudents;
 
-            string path = "C:\\Users\\egori\\source\\repos\\Bindingsource\\Bindingsource\\студ.txt";
+            string path = "C:\\Users\\egori\\source\\repos\\Bindingsource\\Bindingsource\\студ.txt";//путь к БД студентам
             StreamReader f1 = new StreamReader(path);
 
             while (!f1.EndOfStream)
@@ -108,8 +108,8 @@ namespace Bindingsource
             comboBox1.Enabled = false;
             comboBox2.Enabled = false;
             button1.Enabled = false;
-            comboBox4.Items.Add("Мужской");
-            comboBox4.Items.Add("Женский");
+            comboBox4.Items.Add("Man");
+            comboBox4.Items.Add("Woman");
             label2.Text = dataGridView1.ColumnCount.ToString();
             факультетBindingSource.DataSource = Факультет.GetChoices();
         }
@@ -184,7 +184,7 @@ namespace Bindingsource
                 if (temp.studentname == name)
                 {
                     textBox2.Text = temp.studentdate.ToString();
-                    if (temp.studentgender == "Мужской")
+                    if (temp.studentgender == "Man")
                         comboBox4.SelectedIndex = 0;
                     else comboBox4.SelectedIndex = 1;
                     numericUpDown1.Value = temp.studentmidmark;
@@ -211,9 +211,9 @@ namespace Bindingsource
             StreamReader image1 = new StreamReader(path);
             image = Image.FromFile(path);
 
-            string Sex = "Женский";
-            if (comboBox4.Text == "Мужской")
-                Sex = "Мужской";
+            string Sex = "Woman";
+            if (comboBox4.Text == "Man")
+                Sex = "Man";
 
             student.Add(new Students(
                 "ID00" + (student.Count + 1),

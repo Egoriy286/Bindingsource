@@ -61,7 +61,7 @@
             studentphotoDataGridViewImageColumn = new DataGridViewImageColumn();
             studentgenderDataGridViewCheckBoxColumn = new DataGridViewTextBoxColumn();
             studentmidmarkDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            Facultet = new DataGridViewComboBoxColumn();
+            studentfacult = new DataGridViewTextBoxColumn();
             studentsBindingSource = new BindingSource(components);
             label3 = new Label();
             label4 = new Label();
@@ -71,6 +71,8 @@
             label8 = new Label();
             button8 = new Button();
             button9 = new Button();
+            comboBox8 = new ComboBox();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)факультетBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -95,7 +97,7 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Top;
-            button1.Location = new Point(152, 69);
+            button1.Location = new Point(230, 69);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
@@ -106,7 +108,7 @@
             // button2
             // 
             button2.Anchor = AnchorStyles.Top;
-            button2.Location = new Point(238, 69);
+            button2.Location = new Point(316, 69);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 2;
@@ -117,7 +119,7 @@
             // button3
             // 
             button3.Anchor = AnchorStyles.Top;
-            button3.Location = new Point(319, 69);
+            button3.Location = new Point(397, 69);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 3;
@@ -128,7 +130,7 @@
             // textBox2
             // 
             textBox2.Anchor = AnchorStyles.Top;
-            textBox2.Location = new Point(279, 40);
+            textBox2.Location = new Point(357, 40);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(100, 23);
             textBox2.TabIndex = 5;
@@ -137,7 +139,7 @@
             // 
             comboBox1.Anchor = AnchorStyles.Top;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(152, 40);
+            comboBox1.Location = new Point(230, 40);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 8;
@@ -147,7 +149,7 @@
             // 
             comboBox2.Anchor = AnchorStyles.Top;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(385, 40);
+            comboBox2.Location = new Point(463, 40);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(121, 23);
             comboBox2.TabIndex = 9;
@@ -157,7 +159,7 @@
             // 
             comboBox3.Anchor = AnchorStyles.Top;
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(512, 40);
+            comboBox3.Location = new Point(590, 40);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(121, 23);
             comboBox3.TabIndex = 10;
@@ -167,7 +169,7 @@
             // 
             comboBox4.Anchor = AnchorStyles.Top;
             comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(639, 40);
+            comboBox4.Location = new Point(717, 40);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(121, 23);
             comboBox4.TabIndex = 12;
@@ -175,7 +177,7 @@
             // button4
             // 
             button4.Anchor = AnchorStyles.Top;
-            button4.Location = new Point(400, 69);
+            button4.Location = new Point(478, 69);
             button4.Name = "button4";
             button4.Size = new Size(117, 23);
             button4.TabIndex = 13;
@@ -187,7 +189,7 @@
             // 
             numericUpDown1.Anchor = AnchorStyles.Top;
             numericUpDown1.Increment = new decimal(new int[] { 10, 0, 0, 0 });
-            numericUpDown1.Location = new Point(766, 40);
+            numericUpDown1.Location = new Point(844, 40);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(120, 23);
             numericUpDown1.TabIndex = 14;
@@ -196,7 +198,7 @@
             // 
             comboBox5.Anchor = AnchorStyles.Bottom;
             comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(138, 526);
+            comboBox5.Location = new Point(216, 526);
             comboBox5.Name = "comboBox5";
             comboBox5.Size = new Size(121, 23);
             comboBox5.TabIndex = 15;
@@ -205,7 +207,7 @@
             // 
             comboBox6.Anchor = AnchorStyles.Bottom;
             comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(265, 526);
+            comboBox6.Location = new Point(343, 526);
             comboBox6.Name = "comboBox6";
             comboBox6.Size = new Size(121, 23);
             comboBox6.TabIndex = 17;
@@ -213,7 +215,7 @@
             // button5
             // 
             button5.Anchor = AnchorStyles.Bottom;
-            button5.Location = new Point(519, 525);
+            button5.Location = new Point(597, 525);
             button5.Name = "button5";
             button5.Size = new Size(75, 23);
             button5.TabIndex = 18;
@@ -224,7 +226,7 @@
             // button6
             // 
             button6.Anchor = AnchorStyles.Bottom;
-            button6.Location = new Point(600, 525);
+            button6.Location = new Point(678, 525);
             button6.Name = "button6";
             button6.Size = new Size(75, 23);
             button6.TabIndex = 19;
@@ -235,7 +237,7 @@
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Bottom;
-            textBox1.Location = new Point(138, 497);
+            textBox1.Location = new Point(216, 497);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(227, 23);
             textBox1.TabIndex = 16;
@@ -244,7 +246,7 @@
             // 
             comboBox7.Anchor = AnchorStyles.Bottom;
             comboBox7.FormattingEnabled = true;
-            comboBox7.Location = new Point(392, 526);
+            comboBox7.Location = new Point(470, 526);
             comboBox7.Name = "comboBox7";
             comboBox7.Size = new Size(121, 23);
             comboBox7.TabIndex = 20;
@@ -252,7 +254,7 @@
             // textBox3
             // 
             textBox3.Anchor = AnchorStyles.Bottom;
-            textBox3.Location = new Point(138, 571);
+            textBox3.Location = new Point(216, 571);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(121, 23);
             textBox3.TabIndex = 21;
@@ -261,7 +263,7 @@
             // 
             label1.Anchor = AnchorStyles.Bottom;
             label1.AutoSize = true;
-            label1.Location = new Point(138, 553);
+            label1.Location = new Point(216, 553);
             label1.Name = "label1";
             label1.Size = new Size(85, 15);
             label1.TabIndex = 22;
@@ -270,7 +272,7 @@
             // button7
             // 
             button7.Anchor = AnchorStyles.Bottom;
-            button7.Location = new Point(714, 525);
+            button7.Location = new Point(792, 525);
             button7.Name = "button7";
             button7.Size = new Size(172, 23);
             button7.TabIndex = 23;
@@ -281,7 +283,7 @@
             // textBox4
             // 
             textBox4.Anchor = AnchorStyles.Bottom;
-            textBox4.Location = new Point(714, 497);
+            textBox4.Location = new Point(792, 497);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(172, 23);
             textBox4.TabIndex = 24;
@@ -301,12 +303,12 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { studentidDataGridViewTextBoxColumn, studentnameDataGridViewTextBoxColumn, studentgroupDataGridViewTextBoxColumn, studentdateDataGridViewTextBoxColumn, studentkursDataGridViewTextBoxColumn, studentphotoDataGridViewImageColumn, studentgenderDataGridViewCheckBoxColumn, studentmidmarkDataGridViewTextBoxColumn, Facultet });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { studentidDataGridViewTextBoxColumn, studentnameDataGridViewTextBoxColumn, studentgroupDataGridViewTextBoxColumn, studentdateDataGridViewTextBoxColumn, studentkursDataGridViewTextBoxColumn, studentphotoDataGridViewImageColumn, studentgenderDataGridViewCheckBoxColumn, studentmidmarkDataGridViewTextBoxColumn, studentfacult });
             dataGridView1.DataSource = studentsBindingSource;
             dataGridView1.Location = new Point(12, 113);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1031, 368);
+            dataGridView1.Size = new Size(1186, 368);
             dataGridView1.TabIndex = 28;
             // 
             // studentidDataGridViewTextBoxColumn
@@ -371,16 +373,14 @@
             studentmidmarkDataGridViewTextBoxColumn.HeaderText = "studentmidmark";
             studentmidmarkDataGridViewTextBoxColumn.Name = "studentmidmarkDataGridViewTextBoxColumn";
             // 
-            // Facultet
+            // studentfacult
             // 
-            Facultet.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Facultet.DataSource = факультетBindingSource;
-            Facultet.DisplayMember = "Name";
-            Facultet.HeaderText = "NumFacultet";
-            Facultet.Name = "Facultet";
-            Facultet.Resizable = DataGridViewTriState.True;
-            Facultet.SortMode = DataGridViewColumnSortMode.Automatic;
-            Facultet.ValueMember = "Value";
+            studentfacult.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            studentfacult.DataPropertyName = "studentfacultName";
+            studentfacult.HeaderText = "studentfacult";
+            studentfacult.Name = "studentfacult";
+            studentfacult.ReadOnly = true;
+            studentfacult.Width = 102;
             // 
             // studentsBindingSource
             // 
@@ -390,7 +390,7 @@
             // 
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
-            label3.Location = new Point(152, 22);
+            label3.Location = new Point(230, 22);
             label3.Name = "label3";
             label3.Size = new Size(58, 15);
             label3.TabIndex = 29;
@@ -400,7 +400,7 @@
             // 
             label4.Anchor = AnchorStyles.Top;
             label4.AutoSize = true;
-            label4.Location = new Point(279, 22);
+            label4.Location = new Point(357, 22);
             label4.Name = "label4";
             label4.Size = new Size(84, 15);
             label4.TabIndex = 30;
@@ -410,7 +410,7 @@
             // 
             label5.Anchor = AnchorStyles.Top;
             label5.AutoSize = true;
-            label5.Location = new Point(385, 22);
+            label5.Location = new Point(463, 22);
             label5.Name = "label5";
             label5.Size = new Size(46, 15);
             label5.TabIndex = 31;
@@ -420,7 +420,7 @@
             // 
             label6.Anchor = AnchorStyles.Top;
             label6.AutoSize = true;
-            label6.Location = new Point(512, 22);
+            label6.Location = new Point(590, 22);
             label6.Name = "label6";
             label6.Size = new Size(33, 15);
             label6.TabIndex = 32;
@@ -430,7 +430,7 @@
             // 
             label7.Anchor = AnchorStyles.Top;
             label7.AutoSize = true;
-            label7.Location = new Point(639, 22);
+            label7.Location = new Point(717, 22);
             label7.Name = "label7";
             label7.Size = new Size(30, 15);
             label7.TabIndex = 33;
@@ -440,7 +440,7 @@
             // 
             label8.Anchor = AnchorStyles.Top;
             label8.AutoSize = true;
-            label8.Location = new Point(766, 22);
+            label8.Location = new Point(844, 22);
             label8.Name = "label8";
             label8.Size = new Size(34, 15);
             label8.TabIndex = 34;
@@ -449,7 +449,7 @@
             // button8
             // 
             button8.Anchor = AnchorStyles.Top;
-            button8.Location = new Point(811, 69);
+            button8.Location = new Point(889, 69);
             button8.Name = "button8";
             button8.Size = new Size(75, 23);
             button8.TabIndex = 35;
@@ -459,7 +459,8 @@
             // 
             // button9
             // 
-            button9.Location = new Point(913, 61);
+            button9.Anchor = AnchorStyles.Top;
+            button9.Location = new Point(970, 61);
             button9.Name = "button9";
             button9.Size = new Size(130, 38);
             button9.TabIndex = 36;
@@ -467,11 +468,33 @@
             button9.UseVisualStyleBackColor = true;
             button9.Click += yearsold_click;
             // 
+            // comboBox8
+            // 
+            comboBox8.Anchor = AnchorStyles.Top;
+            comboBox8.FormattingEnabled = true;
+            comboBox8.Location = new Point(970, 39);
+            comboBox8.Name = "comboBox8";
+            comboBox8.Size = new Size(121, 23);
+            comboBox8.TabIndex = 37;
+            comboBox8.SelectedIndexChanged += Facul;
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Top;
+            label9.AutoSize = true;
+            label9.Location = new Point(970, 21);
+            label9.Name = "label9";
+            label9.Size = new Size(63, 15);
+            label9.TabIndex = 38;
+            label9.Text = "факультет";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1055, 613);
+            ClientSize = new Size(1210, 613);
+            Controls.Add(label9);
+            Controls.Add(comboBox8);
             Controls.Add(button9);
             Controls.Add(button8);
             Controls.Add(label8);
@@ -549,6 +572,9 @@
         private Label label7;
         private Label label8;
         private Button button8;
+        private Button button9;
+        private ComboBox comboBox8;
+        private Label label9;
         private DataGridViewTextBoxColumn studentidDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn studentnameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn studentgroupDataGridViewTextBoxColumn;
@@ -557,7 +583,6 @@
         private DataGridViewImageColumn studentphotoDataGridViewImageColumn;
         private DataGridViewTextBoxColumn studentgenderDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn studentmidmarkDataGridViewTextBoxColumn;
-        private DataGridViewComboBoxColumn Facultet;
-        private Button button9;
+        private DataGridViewTextBoxColumn studentfacult;
     }
 }

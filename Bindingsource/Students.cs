@@ -28,6 +28,10 @@ namespace Bindingsource
 
         public string studentgender { get; set; }
 
+        public Факультет studentfacult { get; set; }
+
+        public string studentfacultName { get; private set; }
+
         public Students()
         {
             studentid = string.Empty;
@@ -38,10 +42,10 @@ namespace Bindingsource
             studentphoto = null;
             studentgender = string.Empty;
             studentmidmark = 0;
-            //НомерФакультета = 0;
+            studentfacultName = string.Empty;
         }
 
-        public Students(string id, string name, string group, int date, string kurs, Image photo, string gender, int midmark)
+        public Students(string id, string name, string group, int date, string kurs, Image photo, string gender, int midmark, Факультет facul)
         {
             studentid = id;
             studentname = name;
@@ -53,7 +57,8 @@ namespace Bindingsource
             studentphoto = image;
             studentgender = gender;
             studentmidmark = midmark;
-            //НомерФакультета = номерФакультета;
+            studentfacult = facul;
+            studentfacultName = studentfacult.Name;
             Years();
         }
         public void Years() 

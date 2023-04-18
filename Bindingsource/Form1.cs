@@ -11,6 +11,7 @@ namespace Bindingsource
     {
         public int i = 0;
         string studgr;
+        string studft;
         bool put = false;
         Image image;
         BindingList<Students> IsStudents = new BindingList<Students>();
@@ -55,6 +56,17 @@ namespace Bindingsource
             comboBox2.SelectedIndex = 0; comboBox2.Focus();
         }
 
+        //private void AddKurs(Students person, string Facul)
+        //{
+        //    if (person.studentfacult.Name == Facul && person.studentgroup != studgr)
+        //    {
+        //        comboBox2.Items.Add(person.studentgroup);
+        //        studgr = person.studentgroup;
+        //    }
+        //    comboBox2.Enabled = true;
+        //    comboBox2.SelectedIndex = 0; comboBox2.Focus();
+        //}
+
         private void Form1_Load(object sender, EventArgs e)
         {
             string s;
@@ -93,6 +105,9 @@ namespace Bindingsource
                         case 5:
                             all[k].studentmidmark = Convert.ToInt32(temp);
                             break;
+                        case 6:
+                            all[k].studentfacult = new Факультет(temp);
+                            break;
                         default:
                             break;
                     }
@@ -101,9 +116,10 @@ namespace Bindingsource
                 k++;
             }
             f1.Close();
-            all.Add(new Students { studentname = "ALL" });
-            for (j = 1; j < 5; j++)
-                comboBox3.Items.Add(j.ToString());
+            //all.Add(new Students { studentname = "ALL" });
+            comboBox8.Items.Add("ИМИ");
+            comboBox8.Items.Add("ГИ");
+            comboBox8.Items.Add("ИТИ");
             textBox2.Enabled = false;
             comboBox1.Enabled = false;
             comboBox2.Enabled = false;
@@ -144,6 +160,7 @@ namespace Bindingsource
         private void Kurs_changed(object sender, EventArgs e)
         {
             string kurs = comboBox3.Text;
+            string Facul = comboBox8.Text;
             comboBox2.Items.Clear();
             comboBox2.Enabled = false;
             comboBox1.Items.Clear();
@@ -151,7 +168,7 @@ namespace Bindingsource
             textBox2.Enabled = false;
             foreach (var temp in all)
             {
-                if (temp.studentkurs == kurs)
+                if (temp.studentkurs == kurs && temp.studentfacult.Name == Facul)
                 {
                     AddGroup(temp, kurs);
                 }
@@ -196,6 +213,8 @@ namespace Bindingsource
         private void Random_Click(object sender, EventArgs e)
         {
             Random random = new Random();
+            comboBox8.SelectedIndex = random.Next(0, comboBox8.Items.Count);
+
             comboBox3.SelectedIndex = random.Next(0, comboBox3.Items.Count);
 
             comboBox2.SelectedIndex = random.Next(0, comboBox2.Items.Count);
@@ -223,7 +242,8 @@ namespace Bindingsource
                 comboBox3.Text,
                 image,
                 Sex,
-                (int)numericUpDown1.Value
+                (int)numericUpDown1.Value,
+                new Факультет(comboBox8.Text)
                 ));
             i++;
 
@@ -291,7 +311,7 @@ namespace Bindingsource
                     }
             textBox4.Text = student[k].studentname;
         }
-        bool put1=true;
+        bool put1 = true;
         private void yearsold_click(object sender, EventArgs e)
         {
             DataGridViewTextBoxColumn dgvAge = new DataGridViewTextBoxColumn() { Name = "dgvAge", HeaderText = "Возраст", DataPropertyName = "yearsold", Width = 100 };
@@ -303,12 +323,29 @@ namespace Bindingsource
             }
             else
             {
-                dataGridView1.Columns.RemoveAt(dataGridView1.Columns.Count-1);
+                dataGridView1.Columns.RemoveAt(dataGridView1.Columns.Count - 1);
                 button9.Text = "Отоюразить колическтво лет";
                 put1 = true;
             }
 
 
+        }
+
+        private void Facul(object sender, EventArgs e)
+        {
+            string Facul = comboBox8.Text;
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            comboBox1.Enabled = false;
+            comboBox2.Enabled = false;
+            int n = 5;
+            if (Facul == "ИТИ")
+                n = 4;
+            for (int j = 1; j < n; j++)
+                comboBox3.Items.Add(j.ToString());
+            comboBox3.SelectedIndex= 0;
+            Group_changed(sender, e);
         }
     }
 }
